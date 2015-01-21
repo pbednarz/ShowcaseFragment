@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ShowcaseFragment">
+        <attr name="scf_style" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ShowcaseAttrs">
+        <attr name="title_text_appearance" format="reference|integer" />
+        <attr name="desc_text_appearance" format="integer" />
+        <attr name="done_text_appearance" format="integer" />
+        <attr name="circle_scale" format="float" />
+        <attr name="circle_color" format="color|reference" />
+        <attr name="circle_tint" format="color|reference" />
+        <attr name="android:background" />
+    </declare-styleable>
+</resources>
+
