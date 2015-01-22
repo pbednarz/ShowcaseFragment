@@ -2,8 +2,8 @@
 <resources>
     <color name="scf_showcase_tint">@android:color/white</color>
     <color name="scf_showcase_color">#22FFFFFF</color>
-    <color name="scf_showcase_bg_color">#CC1E88E5</color>
-    <item name="scf_radius_scale" format="float" type="dimen">1.75</item>
+    <color name="scf_showcase_bg_color">#EE3f51b5</color>
+    <item name="scf_radius_scale" format="float" type="dimen">2.00</item>
     <dimen name="scf_text_margin_horizontal">42dp</dimen>
     <dimen name="scf_text_margin_vertical">6dp</dimen>
 </resources>

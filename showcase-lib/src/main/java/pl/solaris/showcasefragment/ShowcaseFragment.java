@@ -68,7 +68,9 @@ public class ShowcaseFragment extends Fragment implements View.OnClickListener {
     private static Bitmap loadBitmapFromView(View v) {
         v.setDrawingCacheEnabled(true);
         v.buildDrawingCache();
-        return v.getDrawingCache();
+        Bitmap bitmap = Bitmap.createBitmap(v.getDrawingCache(true));
+        v.setDrawingCacheEnabled(false);
+        return bitmap;
     }
 
     @Override

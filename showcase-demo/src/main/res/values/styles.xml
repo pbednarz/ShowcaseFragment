@@ -3,5 +3,17 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
+
+    <style name="CustomShowcase">
+        <item name="circle_color">#AAE91E63</item>
+        <item name="android:background">#DDC2185B</item>
+        <item name="title_text_appearance">@style/TextAppearance.AppCompat.Large.Inverse</item>
+        <item name="desc_text_appearance">@style/TextAppearance.AppCompat.Large.Inverse</item>
+        <item name="done_text_appearance">@style/TextAppearance.AppCompat.Large.Inverse</item>
+        <item name="circle_scale">3.0</item>
     </style>
 </resources>

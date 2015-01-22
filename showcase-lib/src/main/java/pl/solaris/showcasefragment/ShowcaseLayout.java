@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -25,7 +26,7 @@ final class ShowcaseLayout extends RelativeLayout {
     private ImageView showcaseTarget;
     private TextView showcaseTitle;
     private TextView showcaseDetails;
-    private TextView showcaseDone;
+    private Button showcaseDone;
 
     public ShowcaseLayout(Context context) {
         this(context, null);
@@ -43,25 +44,29 @@ final class ShowcaseLayout extends RelativeLayout {
         super(context, attrs, defStyle);
         if (isInEditMode()) return;
 
+        //Inflate layout
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.view_showcase, this, true);
         setClickable(true);
+
+        //Find views
         showcaseTarget = (ImageView) findViewById(R.id.image);
         showcaseTitle = (TextView) findViewById(R.id.title);
         showcaseDetails = (TextView) findViewById(R.id.description);
-        showcaseDone = (TextView) findViewById(R.id.done);
+        showcaseDone = (Button) findViewById(R.id.done);
 
         //Load defaults from resources
         final Resources res = getResources();
         final int defaultShowCaseColor = res.getColor(R.color.scf_showcase_color);
         final int defaultShowCaseBgColor = res.getColor(R.color.scf_showcase_bg_color);
         final int defaultTintColor = res.getColor(R.color.scf_showcase_tint);
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ShowcaseAttrs, defStyle, defStyleRes);
         paintShadow = new Paint();
         paintShadow.setAntiAlias(true);
         paintShadow.setStyle(Paint.Style.FILL);
-        paintShadow.setColor(a.getColor(R.styleable.ShowcaseAttrs_circle_color, defaultShowCaseColor));
+
+        //Load attributes
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ShowcaseAttrs, defStyle, defStyleRes);
         Drawable background = a.getDrawable(R.styleable.ShowcaseAttrs_android_background);
         if (background != null) {
             setBackgroundDrawable(background);
@@ -71,11 +76,17 @@ final class ShowcaseLayout extends RelativeLayout {
 
         TypedValue typedValue = new TypedValue();
         getResources().getValue(R.dimen.scf_radius_scale, typedValue, true);
+
+        paintShadow.setColor(a.getColor(R.styleable.ShowcaseAttrs_circle_color, defaultShowCaseColor));
         radiusScale = typedValue.getFloat();
-        showcaseTitle.setTextAppearance(context, a.getResourceId(R.styleable.ShowcaseAttrs_title_text_appearance, R.style.TextAppearance_AppCompat_Large_Inverse));
-        showcaseDetails.setTextAppearance(context, a.getResourceId(R.styleable.ShowcaseAttrs_desc_text_appearance, R.style.TextAppearance_AppCompat_Small_Inverse));
-        showcaseDone.setTextAppearance(context, a.getResourceId(R.styleable.ShowcaseAttrs_done_text_appearance, R.style.TextAppearance_AppCompat_Medium_Inverse));
+        showcaseTitle.setTextAppearance(context,
+                a.getResourceId(R.styleable.ShowcaseAttrs_title_text_appearance, R.style.TextAppearance_AppCompat_Large_Inverse));
+        showcaseDetails.setTextAppearance(context,
+                a.getResourceId(R.styleable.ShowcaseAttrs_desc_text_appearance, R.style.TextAppearance_AppCompat_Small_Inverse));
+        showcaseDone.setTextAppearance(context,
+                a.getResourceId(R.styleable.ShowcaseAttrs_done_text_appearance, R.style.TextAppearance_AppCompat_Medium_Inverse));
         showcaseTarget.setColorFilter(a.getColor(R.styleable.ShowcaseAttrs_circle_tint, defaultTintColor));
+
         a.recycle();
     }
 

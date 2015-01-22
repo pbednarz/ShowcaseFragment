@@ -6,8 +6,8 @@
 
     <declare-styleable name="ShowcaseAttrs">
         <attr name="title_text_appearance" format="reference|integer" />
-        <attr name="desc_text_appearance" format="integer" />
-        <attr name="done_text_appearance" format="integer" />
+        <attr name="desc_text_appearance" format="reference|integer" />
+        <attr name="done_text_appearance" format="reference|integer" />
         <attr name="circle_scale" format="float" />
         <attr name="circle_color" format="color|reference" />
         <attr name="circle_tint" format="color|reference" />

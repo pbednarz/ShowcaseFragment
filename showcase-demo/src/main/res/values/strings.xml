@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ShowCaseFragment</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-
+    <string name="app_name">ShowcaseFragment</string>
+    <string name="action_switch">Switch</string>
+    <string name="sc_switch_title">Press Switch</string>
+    <string name="sc_switch_desc">Turn switch ON/OFF to enable custom Showcase style ;)</string>
+    <string name="sc_share_title">Press Share</string>
+    <string name="sc_share_desc">Share it with your Friends, post it, tweet it, like it, + it.</string>
+    <string name="github_title">GitHub is the best place to share code with friends</string>
+    <string name="github_desc">GitHub is a web-based Git repository hosting service, which offers all of the distributed revision control and source code management (SCM) functionality of Git… [Wikipedia]</string>
 </resources>

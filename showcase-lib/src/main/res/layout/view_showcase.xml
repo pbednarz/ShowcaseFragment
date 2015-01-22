@@ -26,7 +26,7 @@
         android:layout_marginLeft="@dimen/scf_text_margin_horizontal"
         android:layout_marginRight="@dimen/scf_text_margin_horizontal" />
 
-    <TextView
+    <Button
         android:id="@+id/done"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,6 +34,5 @@
         android:layout_marginLeft="@dimen/scf_text_margin_horizontal"
         android:layout_marginRight="@dimen/scf_text_margin_horizontal"
         android:layout_marginTop="@dimen/scf_text_margin_vertical"
-        android:background="@drawable/text_selector"
         android:textStyle="bold" />
 </merge>
